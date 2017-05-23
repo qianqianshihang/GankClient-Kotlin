@@ -57,7 +57,7 @@ class IOSFragment : BaseBingingFragment<ViewRecyclerBinding>(), FuckGoodsContrac
 
         mAdapter.setOnItemClickListener {
             pos ->
-            val url = URLEncoder.encode(mList[pos].url)
+            val url = URLEncoder.encode(mList[pos].url,"utf-8")
             GankRouter.router(context, GankClientUri.DETAIL + url)
         }
 

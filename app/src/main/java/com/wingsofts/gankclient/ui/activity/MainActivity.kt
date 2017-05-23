@@ -63,7 +63,7 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding>(),RandomContract.V
   }
   override fun onRandom(goods :FuckGoods) {
 
-    val url = URLEncoder.encode(goods.url)
+    val url = URLEncoder.encode(goods.url,"utf-8")
     toast("手气不错～")
     GankRouter.router(this,GankClientUri.DETAIL + url)
   }

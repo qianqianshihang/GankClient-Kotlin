@@ -1,13 +1,12 @@
 package com.wingsofts.gankclient.ui.widget
 
 import android.content.Context
+import android.util.AttributeSet
+import android.view.View
+import android.view.ViewGroup
 import android.webkit.WebView
 import android.widget.ProgressBar
-import android.graphics.drawable.Drawable
-import android.util.AttributeSet
-import android.widget.AbsoluteLayout
 import com.wingsofts.gankclient.R
-import android.view.View
 
 /**
  * Created by wing on 16-11-25.
@@ -19,8 +18,7 @@ class ProgressWebView(context: Context, attrs: AttributeSet) : WebView(context, 
     init {
         progressbar = ProgressBar(context, null,
                 android.R.attr.progressBarStyleHorizontal)
-        progressbar.layoutParams = AbsoluteLayout.LayoutParams(AbsoluteLayout.LayoutParams.FILL_PARENT,
-                10, 0, 0)
+        progressbar.layoutParams = ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, 10)
 
         val drawable = context.resources.getDrawable(R.drawable.progress_bar)
         progressbar.progressDrawable = drawable
@@ -44,9 +42,7 @@ class ProgressWebView(context: Context, attrs: AttributeSet) : WebView(context, 
     }
 
     override fun onScrollChanged(l: Int, t: Int, oldl: Int, oldt: Int) {
-        val lp = progressbar.layoutParams as AbsoluteLayout.LayoutParams
-        lp.x = l
-        lp.y = t
+        val lp = progressbar.layoutParams
         progressbar.layoutParams = lp
         super.onScrollChanged(l, t, oldl, oldt)
     }

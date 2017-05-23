@@ -19,7 +19,7 @@ class DetailActivity : BaseBindingActivity<ActivityDetailBinding>() {
     var url = ""
     override fun initView() {
         if (intent.getBooleanExtra(DeepLink.IS_DEEP_LINK, false)) {
-            url = URLDecoder.decode(intent.extras.getString(GankClientUri.DETAIL_PARAM_URL))
+            url = URLDecoder.decode(intent.extras.getString(GankClientUri.DETAIL_PARAM_URL),"utf-8")
         }
         setupToolbar(toolbar)
         tv_title.text = "Gank.io"
