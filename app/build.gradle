@@ -5,7 +5,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.wingsofts.gankclient"
         minSdkVersion 15
@@ -66,7 +66,7 @@ dependencies {
 
 
     compile 'com.github.githubwing:ByeBurger:1.2.2'
-    kapt 'com.android.databinding:compiler:1.0-rc5'
+    kapt 'com.android.databinding:compiler:2.4.0-alpha7'
     // Kotlin
 //    compile dependencies.kotlinStdlib
     testCompile 'junit:junit:4.12'
